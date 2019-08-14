@@ -13,12 +13,13 @@ import 'package:kt_dart/collection.dart';
 
 class TMDBApi {
   TMDBApi(this.client);
+
   final Client client;
 
   static final String baseUrl = 'api.themoviedb.org';
 
-  Future<KtList<Actor>> findAvatarsForActors(
-      Event event, KtList<Actor> actors) async {
+  Future<KtList<Actor>> findAvatarsForActors(Event event,
+      KtList<Actor> actors) async {
     int movieId = await _findMovieId(event.originalTitle);
 
     if (movieId != null) {
@@ -36,9 +37,9 @@ class TMDBApi {
 
     final response = await client.get(searchUri);
     Map<String, dynamic> movieSearchJson =
-        json.decode(utf8.decode(response.bodyBytes));
+    json.decode(utf8.decode(response.bodyBytes));
     final searchResults =
-        (movieSearchJson['results'] as List).cast<Map<String, dynamic>>();
+    (movieSearchJson['results'] as List).cast<Map<String, dynamic>>();
 
     if (searchResults.isNotEmpty) {
       return searchResults.first['id'];
@@ -56,7 +57,7 @@ class TMDBApi {
 
     final response = await client.get(actorUri);
     Map<String, dynamic> movieActors =
-        json.decode(utf8.decode(response.bodyBytes));
+    json.decode(utf8.decode(response.bodyBytes));
 
     return _parseActorAvatars(
         (movieActors['cast'] as List).cast<Map<String, dynamic>>());
@@ -68,7 +69,7 @@ class TMDBApi {
     movieCast.forEach((Map<String, dynamic> castMember) {
       String pp = castMember['profile_path'];
       final profilePath =
-          pp != null ? 'https://image.tmdb.org/t/p/w200$pp' : null;
+      pp != null ? 'https://image.tmdb.org/t/p/w200$pp' : null;
 
       actorsWithAvatars.add(Actor(
         name: castMember['name'],

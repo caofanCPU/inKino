@@ -14,7 +14,7 @@ class GalleryParser {
     return listFrom(galleryImage).map((node) {
       return GalleryImage(
         thumbnailLocation:
-            rewriteImageUrl(tagContents(node, 'ThumbnailLocation')),
+        rewriteImageUrl(tagContents(node, 'ThumbnailLocation')),
         location: rewriteImageUrl(tagContents(node, 'Location')),
       );
     });

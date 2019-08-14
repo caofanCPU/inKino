@@ -43,12 +43,12 @@ class EventState {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is EventState &&
-          runtimeType == other.runtimeType &&
-          nowInTheatersStatus == other.nowInTheatersStatus &&
-          comingSoonStatus == other.comingSoonStatus &&
-          nowInTheatersEvents == other.nowInTheatersEvents &&
-          comingSoonEvents == other.comingSoonEvents;
+          other is EventState &&
+              runtimeType == other.runtimeType &&
+              nowInTheatersStatus == other.nowInTheatersStatus &&
+              comingSoonStatus == other.comingSoonStatus &&
+              nowInTheatersEvents == other.nowInTheatersEvents &&
+              comingSoonEvents == other.comingSoonEvents;
 
   @override
   int get hashCode =>

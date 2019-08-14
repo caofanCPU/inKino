@@ -37,21 +37,21 @@ class Show {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Show &&
-          runtimeType == other.runtimeType &&
-          id == other.id &&
-          eventId == other.eventId &&
-          title == other.title &&
-          originalTitle == other.originalTitle &&
-          ageRating == other.ageRating &&
-          ageRatingUrl == other.ageRatingUrl &&
-          url == other.url &&
-          presentationMethod == other.presentationMethod &&
-          theaterAndAuditorium == other.theaterAndAuditorium &&
-          start == other.start &&
-          end == other.end &&
-          images == other.images &&
-          contentDescriptors == other.contentDescriptors;
+          other is Show &&
+              runtimeType == other.runtimeType &&
+              id == other.id &&
+              eventId == other.eventId &&
+              title == other.title &&
+              originalTitle == other.originalTitle &&
+              ageRating == other.ageRating &&
+              ageRatingUrl == other.ageRatingUrl &&
+              url == other.url &&
+              presentationMethod == other.presentationMethod &&
+              theaterAndAuditorium == other.theaterAndAuditorium &&
+              start == other.start &&
+              end == other.end &&
+              images == other.images &&
+              contentDescriptors == other.contentDescriptors;
 
   @override
   int get hashCode =>

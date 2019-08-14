@@ -7,6 +7,7 @@ class EventReleaseDateInformation extends StatelessWidget {
   static final _releaseDateFormat = DateFormat('dd.MM.yyyy');
 
   EventReleaseDateInformation(this.event);
+
   final Event event;
 
   @override

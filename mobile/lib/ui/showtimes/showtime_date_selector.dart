@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 
 class ShowtimeDateSelector extends StatelessWidget {
   ShowtimeDateSelector(this.viewModel);
+
   final ShowtimesPageViewModel viewModel;
 
   @override
@@ -70,6 +71,7 @@ class _ItemContent extends StatelessWidget {
   static final dateFormat = DateFormat('E');
 
   _ItemContent(this.date, this.isSelected);
+
   final DateTime date;
   final bool isSelected;
 

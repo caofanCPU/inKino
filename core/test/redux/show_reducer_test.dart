@@ -8,7 +8,7 @@ void main() {
   group('ShowReducer', () {
     test(
       'when called with ShowDatesUpdatedAction, should update state with 7 days from today',
-      () {
+          () {
         final initialState = ShowState.initial();
         final reducedState = showReducer(
           initialState,

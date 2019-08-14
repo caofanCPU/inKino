@@ -18,6 +18,7 @@ final Store<AppState> _store = createStore(
   Client(),
   WebKeyValueStore(window.localStorage),
 );
+
 Store<AppState> storeFactory() => _store;
 
 @GenerateInjector([

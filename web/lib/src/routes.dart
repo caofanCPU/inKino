@@ -1,11 +1,11 @@
 import 'package:angular_router/angular_router.dart';
 import 'package:core/core.dart';
 import 'package:web/src/event_details/event_details_component.template.dart'
-    deferred as event_details;
+deferred as event_details;
 import 'package:web/src/events/events_page_component.template.dart'
-    as events_page;
+as events_page;
 import 'package:web/src/showtimes/showtimes_page_component.template.dart'
-    deferred as showtimes_page;
+deferred as showtimes_page;
 
 class RoutePaths {
   static final nowInTheaters = RoutePath(

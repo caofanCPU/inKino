@@ -11,7 +11,7 @@ class ContentDescriptorParser {
     }
 
     var contentDescriptors =
-        listFrom(roots).first().findElements('ContentDescriptor');
+    listFrom(roots).first().findElements('ContentDescriptor');
     return listFrom(contentDescriptors).map((element) {
       return ContentDescriptor(
         name: tagContentsOrNull(element, 'Name'),

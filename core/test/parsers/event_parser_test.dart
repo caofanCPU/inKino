@@ -23,7 +23,9 @@ void main() {
       expect(paris1517.directors.size, 1);
       expect(paris1517.directors.first(), 'Clint Eastwood');
       expect(paris1517.actors.size, 11);
-      expect(paris1517.actors.first().name, 'Anthony Sadler');
+      expect(paris1517.actors
+          .first()
+          .name, 'Anthony Sadler');
       expect(paris1517.lengthInMinutes, '94');
       expect(paris1517.shortSynopsis, 'Short synopsis goes here.');
       expect(paris1517.synopsis, 'Synopsis goes here.');
@@ -69,9 +71,13 @@ void main() {
 
       final gallery = paris1517.galleryImages;
       expect(gallery.size, 8);
-      expect(gallery.first().thumbnailLocation,
+      expect(gallery
+          .first()
+          .thumbnailLocation,
           'https://inkino.imgix.net/1012/Event_12007/gallery/THUMB_Adrift_800a.jpg?auto=format,compress');
-      expect(gallery.first().location,
+      expect(gallery
+          .first()
+          .location,
           'https://inkino.imgix.net/1012/Event_12007/gallery/Adrift_800a.jpg?auto=format,compress');
 
       expect(

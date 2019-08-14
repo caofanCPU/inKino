@@ -1,19 +1,19 @@
 <div class="content-wrapper">
-  <div class="page-title">
-    <h3>{{ messages.showtimes }}</h3>
-    <theater-selector></theater-selector>
-  </div>
+    <div class="page-title">
+        <h3>{{ messages.showtimes }}</h3>
+        <theater-selector></theater-selector>
+    </div>
 
-  <date-selector [dates]="viewModel.dates.list"
-                 [selectedDate]="viewModel.selectedDate"
-                 [newDateSelected]="viewModel.changeCurrentDate"></date-selector>
+    <date-selector [dates]="viewModel.dates.list"
+                   [newDateSelected]="viewModel.changeCurrentDate"
+                   [selectedDate]="viewModel.selectedDate"></date-selector>
 
-  <loading-view
-      [status]="viewModel.status"
-      [contentEmpty]="shows.isEmpty()"
-      (actionButtonClicked)="viewModel.refreshShowtimes()">
-    <showtime-item *ngFor="let show of shows.list"
-                   [show]="show"
-                   (click)="openShowDetails(show)"></showtime-item>
-  </loading-view>
+    <loading-view
+            (actionButtonClicked)="viewModel.refreshShowtimes()"
+            [contentEmpty]="shows.isEmpty()"
+            [status]="viewModel.status">
+        <showtime-item (click)="openShowDetails(show)"
+                       *ngFor="let show of shows.list"
+                       [show]="show"></showtime-item>
+    </loading-view>
 </div>

@@ -19,7 +19,7 @@ void main() {
       title: 'In theater event #2',
     );
     final nowInTheatersEvents =
-        listOf(firstInTheaterEvent, secondInTheaterEvent);
+    listOf(firstInTheaterEvent, secondInTheaterEvent);
 
     final firstComingSoonEvent = Event(
       id: 'coming-soon-1',

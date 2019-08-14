@@ -1,4 +1,3 @@
-
 import 'package:core/src/redux/_common/search.dart';
 import 'package:core/src/redux/actor/actor_reducer.dart';
 import 'package:core/src/redux/app/app_state.dart';

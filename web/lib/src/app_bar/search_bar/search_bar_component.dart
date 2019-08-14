@@ -12,6 +12,7 @@ import 'package:redux/redux.dart';
 )
 class SearchBarComponent {
   SearchBarComponent(this.messages, this.store);
+
   final Messages messages;
   final Store<AppState> store;
 

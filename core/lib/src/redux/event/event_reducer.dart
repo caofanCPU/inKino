@@ -47,20 +47,20 @@ EventState _errorLoadingEvents(EventState state, EventListType type) {
   return state.copyWith(comingSoonStatus: status);
 }
 
-EventState _updateActorsForEvent(
-    EventState state, UpdateActorsForEventAction action) {
+EventState _updateActorsForEvent(EventState state,
+    UpdateActorsForEventAction action) {
   final event = action.event;
   event.actors = action.actors;
 
   return state.copyWith(
     nowInTheatersEvents:
-        _addActorImagesToEvent(state.nowInTheatersEvents, event),
+    _addActorImagesToEvent(state.nowInTheatersEvents, event),
     comingSoonEvents: _addActorImagesToEvent(state.comingSoonEvents, event),
   );
 }
 
-KtList<Event> _addActorImagesToEvent(
-    KtList<Event> originalEvents, Event replacement) {
+KtList<Event> _addActorImagesToEvent(KtList<Event> originalEvents,
+    Event replacement) {
   final positionToReplace = originalEvents
       .indexOfFirst((candidate) => candidate.id == replacement.id);
 

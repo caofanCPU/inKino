@@ -17,8 +17,8 @@ class TheaterMiddleware extends MiddlewareClass<AppState> {
   final KeyValueStore keyValueStore;
 
   @override
-  Future<Null> call(
-      Store<AppState> store, dynamic action, NextDispatcher next) async {
+  Future<Null> call(Store<AppState> store, dynamic action,
+      NextDispatcher next) async {
     if (action is InitAction) {
       await _init(action, next);
     } else if (action is ChangeCurrentTheaterAction) {
@@ -36,8 +36,8 @@ class TheaterMiddleware extends MiddlewareClass<AppState> {
     next(InitCompleteAction(theaters, currentTheater));
   }
 
-  Future<Null> _changeCurrentTheater(
-      ChangeCurrentTheaterAction action, NextDispatcher next) async {
+  Future<Null> _changeCurrentTheater(ChangeCurrentTheaterAction action,
+      NextDispatcher next) async {
     keyValueStore.setString(kDefaultTheaterId, action.selectedTheater.id);
     next(action);
   }

@@ -14,6 +14,7 @@ import 'package:web/src/routes.dart';
 )
 class NavBarComponent {
   NavBarComponent(this.messages);
+
   final Messages messages;
 
   @Input()

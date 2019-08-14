@@ -12,9 +12,9 @@ import 'package:test/test.dart';
 void main() {
   group('Show selectors', () {
     final firstShow =
-        Show(id: 'first', title: 'First show', originalTitle: 'First show');
+    Show(id: 'first', title: 'First show', originalTitle: 'First show');
     final secondShow =
-        Show(id: 'second', title: 'Second show', originalTitle: 'Second show');
+    Show(id: 'second', title: 'Second show', originalTitle: 'Second show');
     final showWithAnotherCacheKey = Show(id: 'show-with-another-cache-key');
     final shows = listOf(firstShow, secondShow);
 

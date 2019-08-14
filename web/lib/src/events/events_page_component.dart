@@ -22,6 +22,7 @@ import '../restore_scroll_position.dart';
 )
 class EventsPageComponent implements OnActivate {
   EventsPageComponent(this._store, this._router, this.messages);
+
   final Store<AppState> _store;
   final Router _router;
   final Messages messages;
@@ -31,9 +32,10 @@ class EventsPageComponent implements OnActivate {
   EventsPageViewModel get viewModel =>
       EventsPageViewModel.fromStore(_store, _listType);
 
-  String get eventTypeTitle => _listType == EventListType.nowInTheaters
-      ? messages.nowInTheaters
-      : messages.comingSoon;
+  String get eventTypeTitle =>
+      _listType == EventListType.nowInTheaters
+          ? messages.nowInTheaters
+          : messages.comingSoon;
 
   bool get isDisplayingComingSoonMovies =>
       _listType == EventListType.comingSoon;
@@ -52,7 +54,7 @@ class EventsPageComponent implements OnActivate {
     storeCurrentScrollPosition();
 
     final url =
-        RoutePaths.eventDetails.toUrl(parameters: {'eventId': event.id});
+    RoutePaths.eventDetails.toUrl(parameters: {'eventId': event.id});
     _router.navigate(url);
   }
 }

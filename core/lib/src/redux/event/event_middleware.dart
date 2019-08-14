@@ -11,11 +11,12 @@ import 'package:redux/redux.dart';
 
 class EventMiddleware extends MiddlewareClass<AppState> {
   EventMiddleware(this.api);
+
   final FinnkinoApi api;
 
   @override
-  Future<void> call(
-      Store<AppState> store, dynamic action, NextDispatcher next) async {
+  Future<void> call(Store<AppState> store, dynamic action,
+      NextDispatcher next) async {
     next(action);
 
     final theater = _determineTheater(action, store);
@@ -38,8 +39,8 @@ class EventMiddleware extends MiddlewareClass<AppState> {
     return _fetchComingSoonEvents(next);
   }
 
-  Future<void> _fetchNowPlayingEvents(
-      Theater theater, NextDispatcher next) async {
+  Future<void> _fetchNowPlayingEvents(Theater theater,
+      NextDispatcher next) async {
     if (theater != null) {
       next(RequestingEventsAction(EventListType.nowInTheaters));
 
@@ -67,16 +68,16 @@ class EventMiddleware extends MiddlewareClass<AppState> {
   Theater _determineTheater(dynamic action, Store<AppState> store) {
     try {
       return action is RefreshEventsAction
-          ? store.state.theaterState.currentTheater
-          : action.selectedTheater;
+      ? store.state.theaterState.currentTheater
+    : action.selectedTheater;
     } catch (e) {
-      /// FIXME: Ugly hack because rush to release before Christmas rush.
-      return null;
+    /// FIXME: Ugly hack because rush to release before Christmas rush.
+    return null;
     }
   }
 
-  Future<void> _refreshEvents(
-      Theater theater, RefreshEventsAction action, NextDispatcher next) {
+  Future<void> _refreshEvents(Theater theater, RefreshEventsAction action,
+      NextDispatcher next) {
     if (action.type == EventListType.nowInTheaters) {
       return _fetchNowPlayingEvents(theater, next);
     } else {

@@ -1,49 +1,49 @@
-<div class="container" [class.visible]="contentVisible" *ngIf="event != null">
-  <event-landscape-image [event]="event"></event-landscape-image>
-  <img src="images/back.svg" class="back" (click)="goBack()"/>
+<div *ngIf="event != null" [class.visible]="contentVisible" class="container">
+    <event-landscape-image [event]="event"></event-landscape-image>
+    <img (click)="goBack()" class="back" src="images/back.svg"/>
 
-  <div class="event-header">
-    <event-poster [event]="event" [isTouchable]="false" [hasDetails]="false"></event-poster>
-    <div class="event-information">
-      <h2 class="title">{{ event.title }}</h2>
+    <div class="event-header">
+        <event-poster [event]="event" [hasDetails]="false" [isTouchable]="false"></event-poster>
+        <div class="event-information">
+            <h2 class="title">{{ event.title }}</h2>
 
-      <div class="body">
-        <p class="length">{{ event.lengthInMinutes }} min</p>
-        <p class="director" *ngIf="event.director != null">
-          <strong>{{ messages.director }}</strong>: {{ event.director }}
-        </p>
-      </div>
+            <div class="body">
+                <p class="length">{{ event.lengthInMinutes }} min</p>
+                <p *ngIf="event.director != null" class="director">
+                    <strong>{{ messages.director }}</strong>: {{ event.director }}
+                </p>
+            </div>
 
-      <content-rating [event]="event" size="medium"></content-rating>
+            <content-rating [event]="event" size="medium"></content-rating>
+        </div>
     </div>
-  </div>
 
-  <div class="centered-content" *ngIf="show != null">
-    <showtime-item [show]="show" style="margin-top: 45px" full-opacity></showtime-item>
-  </div>
-
-  <div class="section" *ngIf="event.hasSynopsis">
-    <div class="centered-content">
-      <h3>{{ messages.storyline }}</h3>
-      <p class="synopsis">{{ event.synopsis }}</p>
+    <div *ngIf="show != null" class="centered-content">
+        <showtime-item [show]="show" full-opacity style="margin-top: 45px"></showtime-item>
     </div>
-  </div>
 
-  <div class="section white top-shadow actor-section" *ngIf="event.actors.isNotEmpty()">
-    <div class="centered-content">
-      <h3>{{ messages.cast }}</h3>
-      <actor-scroller [actors]="event.actors.list"></actor-scroller>
+    <div *ngIf="event.hasSynopsis" class="section">
+        <div class="centered-content">
+            <h3>{{ messages.storyline }}</h3>
+            <p class="synopsis">{{ event.synopsis }}</p>
+        </div>
     </div>
-  </div>
 
-  <div class="section footer" *ngIf="event.galleryImages.isNotEmpty()">
-    <div class="centered-content">
-      <h3>{{ messages.gallery }}</h3>
-
-      <div class="gallery">
-        <img *ngFor="let galleryImage of event.galleryImages.list" [src]="galleryImage.location"
-             [alt]="'A still frame from the movie ' + event.title"/>
-      </div>
+    <div *ngIf="event.actors.isNotEmpty()" class="section white top-shadow actor-section">
+        <div class="centered-content">
+            <h3>{{ messages.cast }}</h3>
+            <actor-scroller [actors]="event.actors.list"></actor-scroller>
+        </div>
     </div>
-  </div>
+
+    <div *ngIf="event.galleryImages.isNotEmpty()" class="section footer">
+        <div class="centered-content">
+            <h3>{{ messages.gallery }}</h3>
+
+            <div class="gallery">
+                <img *ngFor="let galleryImage of event.galleryImages.list" [alt]="'A still frame from the movie ' + event.title"
+                     [src]="galleryImage.location"/>
+            </div>
+        </div>
+    </div>
 </div>

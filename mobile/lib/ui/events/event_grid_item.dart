@@ -46,6 +46,7 @@ class EventGridItem extends StatelessWidget {
 
 class _TextualInfo extends StatelessWidget {
   _TextualInfo(this.event);
+
   final Event event;
 
   BoxDecoration _buildGradientBackground() {
@@ -75,6 +76,7 @@ class _TextualInfo extends StatelessWidget {
 
 class _TextualInfoContent extends StatelessWidget {
   _TextualInfoContent(this.event);
+
   final Event event;
 
   @override

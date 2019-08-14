@@ -16,12 +16,15 @@ Show showByIdSelector(AppState state, String id) {
 /// If the current AppState contains a search query, returns only shows that match
 /// that search query. Otherwise returns all matching shows for current theater
 /// and date.
-final showsSelector = createSelector3<AppState, DateTheaterPair,
-    KtMap<DateTheaterPair, KtList<Show>>, String, KtList<Show>>(
-  (state) => DateTheaterPair.fromState(state),
-  (state) => state.showState.shows,
-  (state) => state.searchQuery,
-  (key, KtMap<DateTheaterPair, KtList<Show>> shows, searchQuery) {
+final showsSelector = createSelector3<AppState,
+    DateTheaterPair,
+    KtMap<DateTheaterPair, KtList<Show>>,
+    String,
+    KtList<Show>>(
+      (state) => DateTheaterPair.fromState(state),
+      (state) => state.showState.shows,
+      (state) => state.searchQuery,
+      (key, KtMap<DateTheaterPair, KtList<Show>> shows, searchQuery) {
     KtList<Show> matchingShows = shows.getOrDefault(key, emptyList<Show>());
     if (searchQuery == null) {
       return matchingShows;
@@ -32,7 +35,7 @@ final showsSelector = createSelector3<AppState, DateTheaterPair,
 );
 
 final showsForEventSelector =
-    memo2<KtList<Show>, Event, KtList<Show>>((shows, event) {
+memo2<KtList<Show>, Event, KtList<Show>>((shows, event) {
   return shows.filter((show) => show.originalTitle == event.originalTitle);
 });
 
@@ -40,7 +43,7 @@ KtList<Show> _showsWithSearchQuery(KtList<Show> shows, String searchQuery) {
   final searchQueryPattern = new RegExp(searchQuery, caseSensitive: false);
 
   return shows.filter((show) =>
-      show.title.contains(searchQueryPattern) ||
+  show.title.contains(searchQueryPattern) ||
       show.originalTitle.contains(searchQueryPattern));
 }
 

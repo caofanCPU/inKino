@@ -34,7 +34,9 @@ class LoadingViewState extends State<LoadingView>
   AnimationController _successController;
 
   bool get loadingContentVisible => _loadingController.value == 1.0;
+
   bool get errorContentVisible => _errorController.value == 1.0;
+
   bool get successContentVisible => _successController.value == 1.0;
 
   Widget firstChild;

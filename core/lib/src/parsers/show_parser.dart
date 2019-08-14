@@ -23,7 +23,7 @@ class ShowParser {
         originalTitle: EventNameCleaner.cleanup(originalTitle),
         ageRating: tagContentsOrNull(node, 'Rating'),
         ageRatingUrl:
-            rewriteImageUrl(tagContentsOrNull(node, 'RatingImageUrl')),
+        rewriteImageUrl(tagContentsOrNull(node, 'RatingImageUrl')),
         url: tagContents(node, 'ShowURL'),
         presentationMethod: tagContents(node, 'PresentationMethod'),
         theaterAndAuditorium: tagContents(node, 'TheatreAndAuditorium'),

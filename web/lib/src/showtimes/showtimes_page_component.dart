@@ -26,6 +26,7 @@ import 'package:web/src/showtimes/date_selector_component.dart';
 )
 class ShowtimesPageComponent implements OnActivate {
   ShowtimesPageComponent(this._store, this._router, this.messages);
+
   final Store<AppState> _store;
   final Router _router;
   final Messages messages;
@@ -36,9 +37,10 @@ class ShowtimesPageComponent implements OnActivate {
   ShowtimesPageViewModel get viewModel =>
       ShowtimesPageViewModel.fromStore(_store);
 
-  KtList<Show> get shows => eventFilter == null
-      ? viewModel.shows
-      : showsForEventSelector(viewModel.shows, eventFilter);
+  KtList<Show> get shows =>
+      eventFilter == null
+          ? viewModel.shows
+          : showsForEventSelector(viewModel.shows, eventFilter);
 
   void openShowDetails(Show show) {
     storeCurrentScrollPosition();

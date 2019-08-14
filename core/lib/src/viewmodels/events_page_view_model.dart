@@ -18,10 +18,8 @@ class EventsPageViewModel {
   final KtList<Event> events;
   final Function refreshEvents;
 
-  static EventsPageViewModel fromStore(
-    Store<AppState> store,
-    EventListType type,
-  ) {
+  static EventsPageViewModel fromStore(Store<AppState> store,
+      EventListType type,) {
     return EventsPageViewModel(
       status: type == EventListType.nowInTheaters
           ? store.state.eventState.nowInTheatersStatus
@@ -36,10 +34,10 @@ class EventsPageViewModel {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is EventsPageViewModel &&
-          runtimeType == other.runtimeType &&
-          status == other.status &&
-          events == other.events;
+          other is EventsPageViewModel &&
+              runtimeType == other.runtimeType &&
+              status == other.status &&
+              events == other.events;
 
   @override
   int get hashCode => status.hashCode ^ events.hashCode;

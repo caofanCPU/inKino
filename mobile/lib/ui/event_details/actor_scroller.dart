@@ -7,6 +7,7 @@ import 'package:kt_dart/collection.dart';
 
 class ActorScroller extends StatelessWidget {
   const ActorScroller(this.event);
+
   final Event event;
 
   @override
@@ -21,6 +22,7 @@ class ActorScroller extends StatelessWidget {
 
 class ActorScrollerContent extends StatelessWidget {
   const ActorScrollerContent(this.actors);
+
   final KtList<Actor> actors;
 
   @override
@@ -41,6 +43,7 @@ class ActorScrollerContent extends StatelessWidget {
 
 class _ActorScrollerWrapper extends StatelessWidget {
   _ActorScrollerWrapper(this.child);
+
   final Widget child;
 
   @override
@@ -89,6 +92,7 @@ class _ActorScrollerWrapper extends StatelessWidget {
 
 class _ActorListItem extends StatelessWidget {
   _ActorListItem(this.actor);
+
   final Actor actor;
 
   @override
@@ -113,6 +117,7 @@ class _ActorListItem extends StatelessWidget {
 
 class _ActorAvatar extends StatelessWidget {
   _ActorAvatar(this.actor);
+
   final Actor actor;
 
   @override

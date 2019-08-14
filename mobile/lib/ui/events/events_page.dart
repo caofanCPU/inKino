@@ -10,13 +10,15 @@ import 'package:inkino/ui/events/event_grid.dart';
 
 class EventsPage extends StatelessWidget {
   EventsPage(this.listType);
+
   final EventListType listType;
 
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, EventsPageViewModel>(
       distinct: true,
-      onInit: (store) => store.dispatch(FetchComingSoonEventsIfNotLoadedAction()),
+      onInit: (store) =>
+          store.dispatch(FetchComingSoonEventsIfNotLoadedAction()),
       converter: (store) => EventsPageViewModel.fromStore(store, listType),
       builder: (_, viewModel) => EventsPageContent(viewModel, listType),
     );
@@ -25,6 +27,7 @@ class EventsPage extends StatelessWidget {
 
 class EventsPageContent extends StatelessWidget {
   EventsPageContent(this.viewModel, this.listType);
+
   final EventsPageViewModel viewModel;
   final EventListType listType;
 

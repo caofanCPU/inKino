@@ -13,6 +13,7 @@ class ShowtimeList extends StatefulWidget {
   static const Key contentKey = Key('content');
 
   ShowtimeList(this.status, this.shows);
+
   final LoadingStatus status;
   final KtList<Show> shows;
 

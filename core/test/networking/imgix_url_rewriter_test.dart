@@ -24,7 +24,8 @@ void main() {
         'https://inkino.imgix.net/images/rating_large_Tulossa.png?auto=format,compress',
       );
       expect(
-        rewriteImageUrl('https://media.finnkino.fi/images/rating_large_Not%20yet%20rated.png'),
+        rewriteImageUrl(
+            'https://media.finnkino.fi/images/rating_large_Not%20yet%20rated.png'),
         'https://inkino.imgix.net/images/rating_large_Tulossa.png?auto=format,compress',
       );
     });

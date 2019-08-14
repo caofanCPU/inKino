@@ -6,7 +6,7 @@ void main() {
     test('search reducer tests', () {
       final state = null;
       final reducedState =
-          searchQueryReducer(state, SearchQueryChangedAction('test'));
+      searchQueryReducer(state, SearchQueryChangedAction('test'));
 
       expect(reducedState, 'test');
     });

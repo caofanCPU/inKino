@@ -24,6 +24,7 @@ class ShowtimesPage extends StatelessWidget {
 
 class ShowtimesPageContent extends StatelessWidget {
   ShowtimesPageContent(this.viewModel);
+
   final ShowtimesPageViewModel viewModel;
 
   @override

@@ -5,6 +5,7 @@ import 'package:inkino/message_provider.dart';
 
 class EventGalleryGrid extends StatelessWidget {
   EventGalleryGrid(this.event);
+
   final Event event;
 
   @override
@@ -40,6 +41,7 @@ class _Title extends StatelessWidget {
 
 class _Grid extends StatelessWidget {
   _Grid(this.event);
+
   final Event event;
 
   @override
@@ -66,6 +68,7 @@ class _Grid extends StatelessWidget {
 
 class _GalleryImage extends StatelessWidget {
   _GalleryImage(this.url);
+
   final String url;
 
   @override

@@ -44,12 +44,12 @@ class ShowState {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ShowState &&
-          runtimeType == other.runtimeType &&
-          loadingStatus == other.loadingStatus &&
-          dates == other.dates &&
-          selectedDate == other.selectedDate &&
-          shows == other.shows;
+          other is ShowState &&
+              runtimeType == other.runtimeType &&
+              loadingStatus == other.loadingStatus &&
+              dates == other.dates &&
+              selectedDate == other.selectedDate &&
+              shows == other.shows;
 
   @override
   int get hashCode =>

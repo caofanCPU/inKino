@@ -22,10 +22,10 @@ class EventParser {
         title: EventNameCleaner.cleanup(title),
         originalTitle: EventNameCleaner.cleanup(originalTitle),
         releaseDate:
-            _parseReleaseDate(tagContentsOrNull(node, 'dtLocalRelease')),
+        _parseReleaseDate(tagContentsOrNull(node, 'dtLocalRelease')),
         ageRating: tagContentsOrNull(node, 'Rating'),
         ageRatingUrl:
-            rewriteImageUrl(tagContentsOrNull(node, 'RatingImageUrl')),
+        rewriteImageUrl(tagContentsOrNull(node, 'RatingImageUrl')),
         genres: tagContents(node, 'Genres'),
         directors: _parseDirectors(node.findAllElements('Director')),
         actors: _parseActors(node.findAllElements('Actor')),
@@ -82,17 +82,17 @@ class EventImageDataParser {
 
     final root = roots.first;
     final landscapeBig =
-        rewriteImageUrl(tagContentsOrNull(root, 'EventLargeImageLandscape'));
+    rewriteImageUrl(tagContentsOrNull(root, 'EventLargeImageLandscape'));
 
     return EventImageData(
       portraitSmall:
-          rewriteImageUrl(tagContentsOrNull(root, 'EventSmallImagePortrait')),
+      rewriteImageUrl(tagContentsOrNull(root, 'EventSmallImagePortrait')),
       portraitMedium:
-          rewriteImageUrl(tagContentsOrNull(root, 'EventMediumImagePortrait')),
+      rewriteImageUrl(tagContentsOrNull(root, 'EventMediumImagePortrait')),
       portraitLarge:
-          rewriteImageUrl(tagContentsOrNull(root, 'EventLargeImagePortrait')),
+      rewriteImageUrl(tagContentsOrNull(root, 'EventLargeImagePortrait')),
       landscapeSmall:
-          rewriteImageUrl(tagContentsOrNull(root, 'EventSmallImageLandscape')),
+      rewriteImageUrl(tagContentsOrNull(root, 'EventSmallImageLandscape')),
       landscapeBig: landscapeBig,
       landscapeHd: _getHdImageUrl(landscapeBig),
       landscapeHd2: _getHdImageUrl2(landscapeBig),

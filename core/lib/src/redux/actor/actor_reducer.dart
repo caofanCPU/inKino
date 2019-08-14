@@ -12,8 +12,8 @@ KtMap<String, Actor> actorReducer(KtMap<String, Actor> state, dynamic action) {
   return state;
 }
 
-KtMap<String, Actor> _updateActors(
-    KtMap<String, Actor> state, ActorsUpdatedAction action) {
+KtMap<String, Actor> _updateActors(KtMap<String, Actor> state,
+    ActorsUpdatedAction action) {
   final actors = state.toMutableMap();
   action.actors.forEach((actor) {
     actors.putIfAbsent(actor.name, Actor(name: actor.name));
@@ -21,8 +21,8 @@ KtMap<String, Actor> _updateActors(
   return actors.toMap();
 }
 
-KtMap<String, Actor> _updateActorAvatars(
-    KtMap<String, Actor> state, ReceivedActorAvatarsAction action) {
+KtMap<String, Actor> _updateActorAvatars(KtMap<String, Actor> state,
+    ReceivedActorAvatarsAction action) {
   final actorsWithAvatars = state.toMutableMap();
   action.actors.forEach((actor) {
     actorsWithAvatars[actor.name] = Actor(

@@ -5,14 +5,14 @@ import 'package:kt_dart/collection.dart';
 import 'package:reselect/reselect.dart';
 
 final nowInTheatersSelector = createSelector2(
-  (AppState state) => state.eventState.nowInTheatersEvents,
-  (AppState state) => state.searchQuery,
+      (AppState state) => state.eventState.nowInTheatersEvents,
+      (AppState state) => state.searchQuery,
   _eventsOrEventSearch,
 );
 
 final comingSoonSelector = createSelector2(
-  (AppState state) => state.eventState.comingSoonEvents,
-  (AppState state) => state.searchQuery,
+      (AppState state) => state.eventState.comingSoonEvents,
+      (AppState state) => state.searchQuery,
   _eventsOrEventSearch,
 );
 
@@ -40,15 +40,15 @@ KtList<Event> _eventsOrEventSearch(KtList<Event> events, String searchQuery) {
 /// are exactly the same.
 KtList<Event> _uniqueEvents(KtList<Event> original) {
   return original
-      // reverse because last unique key wins
+  // reverse because last unique key wins
       .reversed()
       .associateBy((event) => event.originalTitle)
       .values
       .reversed();
 }
 
-KtList<Event> _eventsWithSearchQuery(
-    KtList<Event> original, String searchQuery) {
+KtList<Event> _eventsWithSearchQuery(KtList<Event> original,
+    String searchQuery) {
   final searchQueryPattern = RegExp(searchQuery, caseSensitive: false);
 
   return original.filter((event) {

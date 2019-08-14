@@ -72,7 +72,7 @@ void main() {
 
     test(
       'when called with InitCompleteAction, should update show dates',
-      () async {
+          () async {
         // The middleware filters shows based on if the showtime has already
         // passed. As DateTime(2018) will mean the very first hour and minute
         // in January, all the show times in test assets will be after this date.
@@ -89,14 +89,15 @@ void main() {
 
     test(
       'when called with FetchShowsIfNotLoadedAction, should fetch shows',
-      () async {
+          () async {
         Clock.getCurrentTime = () => startOf2018;
         when(mockFinnkinoApi.getSchedule(theater, any))
-            .thenAnswer((_) => Future.value(listOf(
-                  Show(start: DateTime(2018, 02, 21)),
-                  Show(start: DateTime(2018, 02, 21)),
-                  Show(start: DateTime(2018, 03, 21)),
-                )));
+            .thenAnswer((_) =>
+            Future.value(listOf(
+              Show(start: DateTime(2018, 02, 21)),
+              Show(start: DateTime(2018, 02, 21)),
+              Show(start: DateTime(2018, 03, 21)),
+            )));
 
         await middleware.call(mockStore, FetchShowsIfNotLoadedAction(), next);
 
@@ -117,17 +118,18 @@ void main() {
 
     test(
       'when called with ChangeCurrentDateAction, should dispatch a ReceivedShowsAction with only relevant shows',
-      () async {
+          () async {
         // Given
         Clock.getCurrentTime = () => DateTime(2018, 3);
         when(mockFinnkinoApi.getSchedule(theater, any))
-            .thenAnswer((_) => Future.value(
-                  listOf(
-                    Show(start: DateTime(2018, 02, 21)),
-                    Show(start: DateTime(2018, 02, 21)),
-                    Show(start: DateTime(2018, 03, 21)),
-                  ),
-                ));
+            .thenAnswer((_) =>
+            Future.value(
+              listOf(
+                Show(start: DateTime(2018, 02, 21)),
+                Show(start: DateTime(2018, 02, 21)),
+                Show(start: DateTime(2018, 03, 21)),
+              ),
+            ));
 
         // When
         await changeDate(startOf2018);
@@ -146,7 +148,7 @@ void main() {
 
     test(
       'when FetchShowsIfNotLoadedAction results in an error, should dispatch an ErrorLoadingShowsAction',
-      () async {
+          () async {
         // Given
         when(mockFinnkinoApi.getSchedule(any, any))
             .thenAnswer((_) => Future.error(Error()));
@@ -164,7 +166,7 @@ void main() {
 
     test(
       'when called with UpdateShowDatesAction',
-      () async {
+          () async {
         Clock.getCurrentTime = () => DateTime(2018, 1, 1);
 
         await middleware.call(mockStore, UpdateShowDatesAction(), next);
@@ -191,7 +193,7 @@ void main() {
 
     test(
       'should only fetch shows for specific date and theater once',
-      () async {
+          () async {
         Clock.getCurrentTime = () => DateTime(2017, 1, 1);
 
         when(mockStore.state).thenReturn(_stateBoilerplate());

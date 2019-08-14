@@ -6,6 +6,7 @@ class UpdateShowDatesAction {}
 
 class ShowDatesUpdatedAction {
   ShowDatesUpdatedAction(this.dates);
+
   final KtList<DateTime> dates;
 }
 
@@ -17,6 +18,7 @@ class RefreshShowsAction {}
 
 class ReceivedShowsAction {
   ReceivedShowsAction(this.cacheKey, this.shows);
+
   final DateTheaterPair cacheKey;
   final KtList<Show> shows;
 }
@@ -25,5 +27,6 @@ class ErrorLoadingShowsAction {}
 
 class ChangeCurrentDateAction {
   ChangeCurrentDateAction(this.date);
+
   final DateTime date;
 }

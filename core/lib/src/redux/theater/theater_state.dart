@@ -32,10 +32,10 @@ class TheaterState {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TheaterState &&
-          runtimeType == other.runtimeType &&
-          currentTheater == other.currentTheater &&
-          theaters == other.theaters;
+          other is TheaterState &&
+              runtimeType == other.runtimeType &&
+              currentTheater == other.currentTheater &&
+              theaters == other.theaters;
 
   @override
   int get hashCode => currentTheater.hashCode ^ theaters.hashCode;

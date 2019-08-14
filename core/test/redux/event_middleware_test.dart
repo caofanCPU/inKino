@@ -57,7 +57,7 @@ void main() {
 
     test(
       'when called with InitCompleteAction, should dispatch a ReceivedEventsAction with now playing events',
-      () async {
+          () async {
         when(mockFinnkinoApi.getNowInTheatersEvents(any))
             .thenAnswer((_) => Future.value(nowInTheatersEvents));
         when(mockFinnkinoApi.getUpcomingEvents())
@@ -138,7 +138,7 @@ void main() {
 
     test(
       'when called with ChangeCurrentTheaterAction, should request events for the theater',
-      () async {
+          () async {
         when(mockFinnkinoApi.getNowInTheatersEvents(any))
             .thenAnswer((_) => Future.value(nowInTheatersEvents));
         when(mockFinnkinoApi.getUpcomingEvents())
@@ -168,7 +168,7 @@ void main() {
 
     test(
       'when InitCompleteAction results in an error, should dispatch an ErrorLoadingEventsAction',
-      () async {
+          () async {
         when(mockFinnkinoApi.getNowInTheatersEvents(any))
             .thenAnswer((_) => Future.error(Error()));
         when(mockFinnkinoApi.getUpcomingEvents())

@@ -11,13 +11,16 @@ import 'package:web/src/common/theater_selector/theater_dropdown_controller.dart
 )
 class TheaterSelectorDropdownMenuComponent {
   TheaterSelectorDropdownMenuComponent(this._store);
+
   final Store<AppState> _store;
 
   TheaterDropdownController controller;
   String background;
 
   TheaterListViewModel get _viewModel => TheaterListViewModel.fromStore(_store);
+
   Theater get selectedTheater => _viewModel.currentTheater;
+
   List<Theater> get theaters => _viewModel.theaters.list;
 
   bool get focusTrapVisible => isOpen;

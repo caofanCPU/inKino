@@ -18,8 +18,8 @@ class ShowMiddleware extends MiddlewareClass<AppState> {
   final FinnkinoApi api;
 
   @override
-  Future<Null> call(
-      Store<AppState> store, dynamic action, NextDispatcher next) async {
+  Future<Null> call(Store<AppState> store, dynamic action,
+      NextDispatcher next) async {
     next(action);
 
     if (action is InitCompleteAction || action is UpdateShowDatesAction) {
@@ -42,13 +42,13 @@ class ShowMiddleware extends MiddlewareClass<AppState> {
   void _updateShowDates(dynamic action, NextDispatcher next) {
     final now = Clock.getCurrentTime();
     var dates =
-        listFrom(List.generate(7, (index) => now.add(Duration(days: index))));
+    listFrom(List.generate(7, (index) => now.add(Duration(days: index))));
 
     next(new ShowDatesUpdatedAction(dates));
   }
 
-  Future<void> _updateCurrentShows(
-      Store<AppState> store, dynamic action, NextDispatcher next) async {
+  Future<void> _updateCurrentShows(Store<AppState> store, dynamic action,
+      NextDispatcher next) async {
     next(RequestingShowsAction());
 
     try {
@@ -68,8 +68,8 @@ class ShowMiddleware extends MiddlewareClass<AppState> {
     }
   }
 
-  Future<KtList<Show>> _fetchShows(
-      DateTime currentDate, Theater newTheater, NextDispatcher next) async {
+  Future<KtList<Show>> _fetchShows(DateTime currentDate, Theater newTheater,
+      NextDispatcher next) async {
     final shows = await api.getSchedule(newTheater, currentDate);
     final now = Clock.getCurrentTime();
 
@@ -79,13 +79,27 @@ class ShowMiddleware extends MiddlewareClass<AppState> {
 
   Theater _getCorrectTheater(Store<AppState> store, dynamic action) {
     return action is InitCompleteAction || action is ChangeCurrentTheaterAction
-        ? action.selectedTheater
-        : store.state.theaterState.currentTheater;
+    ? action.selectedTheater
+    :
+    store
+    .
+    state
+    .
+    theaterState
+    .
+    currentTheater;
   }
 
   DateTime _getCorrectDate(Store<AppState> store, dynamic action) {
     return action is ChangeCurrentDateAction
-        ? action.date
-        : store.state.showState.selectedDate;
+    ? action.date
+    :
+    store
+    .
+    state
+    .
+    showState
+    .
+    selectedDate;
   }
 }

@@ -16,7 +16,9 @@ class ContentRatingComponent {
   Event event;
 
   String get ageRating => show?.ageRating ?? event?.ageRating;
+
   String get ageRatingUrl => show?.ageRatingUrl ?? event?.ageRatingUrl;
 
-  KtList<ContentDescriptor> get contentDescriptors => show?.contentDescriptors ?? event?.contentDescriptors;
+  KtList<ContentDescriptor> get contentDescriptors =>
+      show?.contentDescriptors ?? event?.contentDescriptors;
 }

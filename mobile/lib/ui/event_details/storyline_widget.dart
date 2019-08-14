@@ -4,6 +4,7 @@ import 'package:inkino/message_provider.dart';
 
 class StorylineWidget extends StatefulWidget {
   StorylineWidget(this.event);
+
   final Event event;
 
   @override
@@ -55,6 +56,7 @@ class _StorylineWidgetState extends State<StorylineWidget> {
 
 class _Title extends StatelessWidget {
   _Title(this.expandable, this.expanded);
+
   final bool expandable;
   final bool expanded;
 

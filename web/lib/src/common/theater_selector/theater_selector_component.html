@@ -1,9 +1,9 @@
-<div class="button" (click)="toggleMenu()">
-  <img class="leading" src="images/place.svg" alt="A map pin."/>
-  <span class="button-text">{{ currentTheater.name }}</span>
-  <img src="images/arrow_drop_down.svg" alt="Drop down arrow."/>
+<div (click)="toggleMenu()" class="button">
+    <img alt="A map pin." class="leading" src="images/place.svg"/>
+    <span class="button-text">{{ currentTheater.name }}</span>
+    <img alt="Drop down arrow." src="images/arrow_drop_down.svg"/>
 </div>
 
-<div class="menu" [class.visible]="theaterDropdownVisible">
-  <template class="menu" #menuContainer></template>
+<div [class.visible]="theaterDropdownVisible" class="menu">
+    <template #menuContainer class="menu"></template>
 </div>

@@ -4,15 +4,14 @@
 
 import 'dart:async';
 
-import 'package:intl/intl.dart';
-import 'package:intl/message_lookup_by_library.dart';
-// ignore: implementation_imports
-import 'package:intl/src/intl_helpers.dart';
-
 import 'package:core/src/i18n/inkino_messages_en.dart' deferred as messages_en;
 import 'package:core/src/i18n/inkino_messages_fi.dart' deferred as messages_fi;
+import 'package:intl/intl.dart';
+import 'package:intl/message_lookup_by_library.dart';
+import 'package:intl/src/intl_helpers.dart'i;
 
 typedef Future<dynamic> LibraryLoader();
+
 Map<String, LibraryLoader> _deferredLibraries = {
   'en': () => messages_en.loadLibrary(),
   'fi': () => messages_fi.loadLibrary(),
@@ -32,9 +31,9 @@ MessageLookupByLibrary _findExact(localeName) {
 /// User programs should call this before using [localeName] for messages.
 Future<bool> initializeMessages(String localeName) async {
   var availableLocale = Intl.verifiedLocale(
-    localeName,
-    (locale) => _deferredLibraries[locale] != null,
-    onFailure: (_) => null);
+      localeName,
+          (locale) => _deferredLibraries[locale] != null,
+      onFailure: (_) => null);
   if (availableLocale == null) {
     return new Future.value(false);
   }

@@ -1,7 +1,7 @@
-<div *ngFor="let date of dates"
-     class="date-item"
+<div (click)="newDateSelected(date)"
+     *ngFor="let date of dates"
      [class.selected]="date == selectedDate"
-     (click)="newDateSelected(date)">
-  <p class="dayname">{{ date | date: 'E' }}</p>
-  <p class="day">{{ date | date: 'd' }}</p>
+     class="date-item">
+    <p class="dayname">{{ date | date: 'E' }}</p>
+    <p class="day">{{ date | date: 'd' }}</p>
 </div>

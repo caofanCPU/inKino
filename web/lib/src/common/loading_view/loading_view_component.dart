@@ -16,6 +16,7 @@ import 'package:web/src/common/loading_view/spinner_component.dart';
 )
 class LoadingViewComponent implements OnDestroy {
   LoadingViewComponent(this.messages);
+
   final Messages messages;
 
   LoadingStatus _status;
@@ -30,6 +31,7 @@ class LoadingViewComponent implements OnDestroy {
   String errorMessage;
 
   String get emptyTitle => contentEmpty ? messages.allEmpty : null;
+
   String get emptyMessage => contentEmpty ? messages.noMoviesForToday : null;
 
   @Output()
@@ -43,21 +45,24 @@ class LoadingViewComponent implements OnDestroy {
 
     Timer(
       const Duration(milliseconds: 450),
-      () => _clearOutInvisibleContent = true,
+          () => _clearOutInvisibleContent = true,
     );
   }
 
   bool get loadingContentVisible => _status == LoadingStatus.loading;
+
   bool get loadingContentPresent =>
       loadingContentVisible || !_clearOutInvisibleContent;
 
   bool get successContentVisible => _status == LoadingStatus.success;
+
   bool get successContentPresent =>
       successContentVisible || !_clearOutInvisibleContent;
 
   bool get errorContentVisible =>
       _status == LoadingStatus.error ||
-      (_status != LoadingStatus.loading && contentEmpty);
+          (_status != LoadingStatus.loading && contentEmpty);
+
   bool get errorContentPresent =>
       errorContentVisible || !_clearOutInvisibleContent;
 

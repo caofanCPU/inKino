@@ -36,21 +36,22 @@ void main() {
       });
 
       test('when a persisted theater id exists, uses that as a default',
-          () async {
-        when(mockKeyValueStore.getString(TheaterMiddleware.kDefaultTheaterId))
-            .thenReturn('1012');
+              () async {
+            when(mockKeyValueStore.getString(
+                TheaterMiddleware.kDefaultTheaterId))
+                .thenReturn('1012');
 
-        await middleware.call(null, InitAction(), next);
+            await middleware.call(null, InitAction(), next);
 
-        final InitCompleteAction action = log.single;
-        Theater theater = action.selectedTheater;
-        expect(theater.id, '1012');
-        expect(theater.name, 'Espoo');
-      });
+            final InitCompleteAction action = log.single;
+            Theater theater = action.selectedTheater;
+            expect(theater.id, '1012');
+            expect(theater.name, 'Espoo');
+          });
 
       test(
         'when no persisted theater id, defaults to Helsinki',
-        () async {
+            () async {
           when(mockKeyValueStore.getString(TheaterMiddleware.kDefaultTheaterId))
               .thenReturn(null);
 
@@ -66,7 +67,7 @@ void main() {
 
     test(
       'when called with ChangeCurrentTheaterAction, persists and dispatches the same action',
-      () async {
+          () async {
         final theater = Theater(id: 'test-123', name: 'Test Theater');
         await middleware.call(null, ChangeCurrentTheaterAction(theater), next);
 
@@ -80,7 +81,8 @@ void main() {
   });
 }
 
-Future<String> theatersXml() => Future.value('''<?xml version="1.0"?>
+Future<String> theatersXml() =>
+    Future.value('''<?xml version="1.0"?>
 <TheatreAreas xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <TheatreArea>
         <ID>1029</ID>

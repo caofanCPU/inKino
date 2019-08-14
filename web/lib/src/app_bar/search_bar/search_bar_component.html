@@ -1,16 +1,16 @@
-<img src="images/back.svg"
-     (click)="toggleSearch()"
+<img (click)="toggleSearch()"
      [class.visible]="searchOpen"
+     alt="Stop searching movies"
      class="back"
-     alt="Stop searching movies"/>
+     src="images/back.svg"/>
 
 <input #searchField
-       type="text"
-       [placeholder]="messages.searchHint"
        (input)="updateSearchQuery(searchField.value)"
-       [class.visible]="searchOpen"/>
+       [class.visible]="searchOpen"
+       [placeholder]="messages.searchHint"
+       type="text"/>
 
-<div class="buttons" (click)="toggleSearch()">
-  <img alt="Search for movies" src="images/search.svg" class="app-bar-button search" [class.visible]="!searchOpen"/>
-  <img alt="Stop searching movies" src="images/close.svg" class="app-bar-button close" [class.visible]="searchOpen"/>
+<div (click)="toggleSearch()" class="buttons">
+    <img [class.visible]="!searchOpen" alt="Search for movies" class="app-bar-button search" src="images/search.svg"/>
+    <img [class.visible]="searchOpen" alt="Stop searching movies" class="app-bar-button close" src="images/close.svg"/>
 </div>

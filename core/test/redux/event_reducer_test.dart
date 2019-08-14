@@ -18,7 +18,7 @@ void main() {
 
       final state = EventState.initial();
       final reducedState =
-          eventReducer(state, ReceivedInTheatersEventsAction(events));
+      eventReducer(state, ReceivedInTheatersEventsAction(events));
 
       expect(reducedState.nowInTheatersStatus, LoadingStatus.success);
       expect(reducedState.nowInTheatersEvents, events);
@@ -32,7 +32,7 @@ void main() {
 
       final state = EventState.initial();
       final reducedState =
-          eventReducer(state, ReceivedComingSoonEventsAction(events));
+      eventReducer(state, ReceivedComingSoonEventsAction(events));
 
       expect(reducedState.comingSoonStatus, LoadingStatus.success);
       expect(reducedState.comingSoonEvents, events);
@@ -40,7 +40,7 @@ void main() {
 
     test(
       'when called with UpdateActorsForEventAction, should update event actors when it is a now playing event',
-      () {
+          () {
         final state = EventState.initial().copyWith(
           nowInTheatersEvents: listOf(
             Event(id: '1'),
@@ -73,7 +73,7 @@ void main() {
 
     test(
       'when called with UpdateActorsForEventAction, should update event actors when it is a upcoming event',
-      () {
+          () {
         final state = EventState.initial().copyWith(
           comingSoonEvents: listOf(
             Event(id: '1'),

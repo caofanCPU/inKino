@@ -50,13 +50,13 @@ class AppState {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is AppState &&
-          runtimeType == other.runtimeType &&
-          searchQuery == other.searchQuery &&
-          actorsByName == other.actorsByName &&
-          theaterState == other.theaterState &&
-          showState == other.showState &&
-          eventState == other.eventState;
+          other is AppState &&
+              runtimeType == other.runtimeType &&
+              searchQuery == other.searchQuery &&
+              actorsByName == other.actorsByName &&
+              theaterState == other.theaterState &&
+              showState == other.showState &&
+              eventState == other.eventState;
 
   @override
   int get hashCode =>

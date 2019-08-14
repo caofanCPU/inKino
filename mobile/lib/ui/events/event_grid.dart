@@ -40,6 +40,7 @@ class EventGrid extends StatelessWidget {
 
 class _Content extends StatelessWidget {
   _Content(this.events, this.listType);
+
   final KtList<Event> events;
   final EventListType listType;
 

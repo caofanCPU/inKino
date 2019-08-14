@@ -10,16 +10,19 @@ import 'package:web/src/common/theater_selector/theater_dropdown_controller.dart
 )
 class TheaterSelectorComponent {
   TheaterSelectorComponent(this._store, this._loader);
+
   final Store<AppState> _store;
   final ComponentLoader _loader;
 
   TheaterListViewModel get _viewModel => TheaterListViewModel.fromStore(_store);
+
   Theater get currentTheater => _viewModel.currentTheater;
 
   @ViewChild('menuContainer', read: ViewContainerRef)
   ViewContainerRef menuContainer;
 
   TheaterDropdownController _menuController;
+
   bool get theaterDropdownVisible =>
       _menuController != null && _menuController.isDestroyed == false;
 

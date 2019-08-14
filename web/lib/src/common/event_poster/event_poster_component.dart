@@ -19,6 +19,7 @@ class EventPosterComponent {
   static final _releaseDateFormat = DateFormat('dd.MM.yyyy');
 
   EventPosterComponent(this.messages);
+
   final Messages messages;
 
   @Input()

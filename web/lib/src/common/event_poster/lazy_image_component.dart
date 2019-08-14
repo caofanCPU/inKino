@@ -5,7 +5,7 @@ import 'dart:js' as js;
 import 'package:angular/angular.dart';
 
 final bool supportsIntersectionObserver =
-    js.context.hasProperty('IntersectionObserver');
+js.context.hasProperty('IntersectionObserver');
 
 @Component(
   selector: 'lazy-img',
@@ -18,6 +18,7 @@ class LazyImageComponent implements OnInit {
   static int _adjustedWidth, _adjustedHeight;
 
   LazyImageComponent(this.root);
+
   final Element root;
 
   @Input()
@@ -27,9 +28,10 @@ class LazyImageComponent implements OnInit {
   String alt;
 
   /// So that the images can be also seen fading in when scrolling
-  static final onLoad = (image) => Timer(
+  static final onLoad = (image) =>
+      Timer(
         const Duration(milliseconds: 50),
-        () => image.style.opacity = '1',
+            () => image.style.opacity = '1',
       );
 
   static final _instance = IntersectionObserver(
@@ -49,8 +51,8 @@ class LazyImageComponent implements OnInit {
     image
       ..src = _urlWithDimensions(url)
       ..classes.remove('lazy')
-      ..addEventListener('load', (_) => onLoad(image))
-      ..addEventListener('error', (_) => onLoad(image));
+      ..addEventListener('load', (_) => onLoad(image))..addEventListener(
+        'error', (_) => onLoad(image));
   }
 
   @override
@@ -79,7 +81,7 @@ class LazyImageComponent implements OnInit {
       }
 
       final closestWidth = _widthBreakpoints.firstWhere(
-        (width) => width >= clientWidth,
+            (width) => width >= clientWidth,
         orElse: () => _widthBreakpoints.last,
       );
 

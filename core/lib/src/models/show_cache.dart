@@ -23,10 +23,10 @@ class DateTheaterPair {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is DateTheaterPair &&
-          runtimeType == other.runtimeType &&
-          dateTime == other.dateTime &&
-          theater == other.theater;
+          other is DateTheaterPair &&
+              runtimeType == other.runtimeType &&
+              dateTime == other.dateTime &&
+              theater == other.theater;
 
   @override
   int get hashCode => dateTime.hashCode ^ theater.hashCode;

@@ -132,6 +132,7 @@ class _InkinoAppBarState extends State<InkinoAppBar>
 
 class _Title extends StatelessWidget {
   _Title(this.toggleTheaters);
+
   final VoidCallback toggleTheaters;
 
   @override
@@ -173,6 +174,7 @@ class _Title extends StatelessWidget {
 
 class _TheaterIconButton extends StatelessWidget {
   _TheaterIconButton(this.theatersOpen, this.toggleTheaters);
+
   final bool theatersOpen;
   final VoidCallback toggleTheaters;
 

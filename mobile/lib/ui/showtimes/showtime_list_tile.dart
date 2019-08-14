@@ -77,6 +77,7 @@ class _ShowtimesInfo extends StatelessWidget {
   static final hoursAndMins = DateFormat('HH:mm');
 
   _ShowtimesInfo(this.show);
+
   final Show show;
 
   @override
@@ -105,6 +106,7 @@ class _ShowtimesInfo extends StatelessWidget {
 
 class _DetailedInfo extends StatelessWidget {
   _DetailedInfo(this.show);
+
   final Show show;
 
   @override
@@ -153,6 +155,7 @@ class _DetailedInfo extends StatelessWidget {
 
 class _PresentationMethodChip extends StatelessWidget {
   _PresentationMethodChip(this.show);
+
   final Show show;
 
   @override

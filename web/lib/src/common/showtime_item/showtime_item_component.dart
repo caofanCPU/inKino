@@ -13,6 +13,7 @@ import 'package:web/src/common/content_rating/content_rating_component.dart';
 )
 class ShowtimeItemComponent {
   ShowtimeItemComponent(this.messages);
+
   final Messages messages;
 
   @Input()

@@ -34,6 +34,7 @@ final localizationsDelegates = <LocalizationsDelegate>[
 
 class InKinoApp extends StatefulWidget {
   InKinoApp(this.store);
+
   final Store<AppState> store;
 
   @override

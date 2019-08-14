@@ -68,6 +68,7 @@ class EventPoster extends StatelessWidget {
 
 class _PlayButton extends StatelessWidget {
   _PlayButton(this.event);
+
   final Event event;
 
   @override

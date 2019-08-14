@@ -29,6 +29,7 @@ import 'package:web/src/routes.dart';
 )
 class EventDetailsComponent implements OnInit, OnActivate, OnDestroy {
   EventDetailsComponent(this._store, this._router, this.messages);
+
   final Store<AppState> _store;
   final Router _router;
   final Messages messages;

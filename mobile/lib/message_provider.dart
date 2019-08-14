@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 
 class MessageProvider {
   MessageProvider(this.messages);
+
   final Messages messages;
 
   static Future<MessageProvider> load(Locale locale) {

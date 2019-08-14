@@ -21,6 +21,7 @@ import 'src/routes.dart';
 )
 class AppComponent implements OnInit, AfterContentInit {
   AppComponent(this._store, this._loader);
+
   final Store<AppState> _store;
   final ComponentLoader _loader;
 
@@ -28,7 +29,9 @@ class AppComponent implements OnInit, AfterContentInit {
   ViewContainerRef theaterContainer;
 
   TheaterDropdownController _theaterController;
+
   bool get theaterDropdownVisible => _theaterController?.visible == true;
+
   bool get theaterDropdownActive => _theaterController?.isDestroyed == false;
 
   @override

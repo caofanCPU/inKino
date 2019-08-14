@@ -2,6 +2,7 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:inkino/assets.dart';
 import 'package:inkino/message_provider.dart';
+import 'package:inkino/ui/common/widget_utils.dart';
 import 'package:inkino/ui/event_details/actor_scroller.dart';
 import 'package:inkino/ui/event_details/event_backdrop_photo.dart';
 import 'package:inkino/ui/event_details/event_details_scroll_effects.dart';
@@ -9,7 +10,6 @@ import 'package:inkino/ui/event_details/event_gallery_grid.dart';
 import 'package:inkino/ui/event_details/storyline_widget.dart';
 import 'package:inkino/ui/events/event_poster.dart';
 import 'package:inkino/ui/showtimes/showtime_list_tile.dart';
-import 'package:inkino/ui/common/widget_utils.dart';
 
 class EventDetailsPage extends StatefulWidget {
   EventDetailsPage(
@@ -152,6 +152,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
 
 class _Header extends StatelessWidget {
   _Header(this.event);
+
   final Event event;
 
   @override
@@ -200,6 +201,7 @@ class _Header extends StatelessWidget {
 
 class _BackButton extends StatelessWidget {
   _BackButton(this.scrollEffects);
+
   final EventDetailsScrollEffects scrollEffects;
 
   @override
@@ -225,6 +227,7 @@ class _BackButton extends StatelessWidget {
 
 class _EventInfo extends StatelessWidget {
   _EventInfo(this.event);
+
   final Event event;
 
   List<Widget> _buildTitleAndLengthInMinutes() {
@@ -272,6 +275,7 @@ class _EventInfo extends StatelessWidget {
 
 class _DirectorInfo extends StatelessWidget {
   _DirectorInfo(this.director);
+
   final String director;
 
   @override

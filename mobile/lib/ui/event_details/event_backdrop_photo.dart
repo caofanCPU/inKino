@@ -31,6 +31,7 @@ class EventBackdropPhoto extends StatelessWidget {
 
 class _BackdropPhoto extends StatelessWidget {
   _BackdropPhoto(this.event, this.scrollEffects);
+
   final Event event;
   final EventDetailsScrollEffects scrollEffects;
 
@@ -48,6 +49,7 @@ class _BackdropPhoto extends StatelessWidget {
 
 class _PlaceholderBackground extends StatelessWidget {
   _PlaceholderBackground(this.height);
+
   final double height;
 
   @override
@@ -80,6 +82,7 @@ class _PlaceholderBackground extends StatelessWidget {
 
 class _BackdropImage extends StatelessWidget {
   _BackdropImage(this.event, this.scrollEffects);
+
   final Event event;
   final EventDetailsScrollEffects scrollEffects;
 
@@ -111,6 +114,7 @@ class _BackdropImage extends StatelessWidget {
 
 class _BlurOverlay extends StatelessWidget {
   _BlurOverlay(this.scrollEffects);
+
   final EventDetailsScrollEffects scrollEffects;
 
   @override

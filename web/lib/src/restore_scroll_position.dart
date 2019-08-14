@@ -6,8 +6,8 @@ import 'package:angular_router/angular_router.dart';
 void storeCurrentScrollPosition() =>
     window.sessionStorage['scrollY'] = window.scrollY.toString();
 
-void restoreScrollPositionIfNeeded(
-    RouterState previous, RoutePath restoreWhenComingFrom) {
+void restoreScrollPositionIfNeeded(RouterState previous,
+    RoutePath restoreWhenComingFrom) {
   final shouldRestoreScrollPosition =
       previous?.routePath?.path == restoreWhenComingFrom.path;
 
